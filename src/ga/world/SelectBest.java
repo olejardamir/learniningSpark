@@ -1,22 +1,18 @@
-
 package ga.world;
 
 import java.util.ArrayList;
 
 public class SelectBest {
-    private ArrayList<String> population;
-        private final String goal;
 
-    
-    
-    public SelectBest(ArrayList<String> population, String goal){
-    this.population = population;
-    this.goal = goal;
-    }   
-    
-    
-    
-   public String[] selectBest(int best) {
+    private final ArrayList<String> population;
+    private final String goal;
+
+    public SelectBest(ArrayList<String> population, String goal) {
+        this.population = population;
+        this.goal = goal;
+    }
+
+    public String[] selectBest(int best) {
         String[] bucket = sortPopulation();
         String[] bestN = truncateTo(best, bucket);
         return bestN;
@@ -52,6 +48,5 @@ public class SelectBest {
         }
         return evaluated;
     }
-    
-    
+
 }
